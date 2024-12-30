@@ -46,9 +46,55 @@ def write_currency_table():
     currency_df.to_sql('currency', conn, index=False, if_exists='replace',
               dtype={'date': 'String', 'BYR': 'Real', 'USD': 'Real', 'EUR': 'Real', 'KZT': 'Real', 'UAH': 'Real', 'AZN': 'Real', 'KGS': 'Real', 'UZS': 'Real', 'GEL': 'Real'})
 
+
+def get_salary(salary_from, salary_to, curr_coef):
+    if pd.isna(salary_from) and pd.isna(salary_to):
+        return None
+    elif pd.isna(salary_from):
+        return float(salary_to * curr_coef)
+    elif pd.isna(salary_to):
+        return float(salary_from * curr_coef)
+    else:
+        return float((salary_from+salary_to) / 2 * curr_coef)
+
+def get_koef(currency, date, conn):
+    if currency == 'RUR':
+        return 1
+    if pd.isna(currency):
+        return None
+    cursor = conn.execute(
+        f"""
+            SELECT {currency} 
+            FROM 'currency'
+            WHERE date = {date}
+        """
+    )
+    for row in cursor:
+        return row
+
+
 def main():
     df = pd.read_csv('local_files/vacancies_2024.csv', low_memory = False)
     conn = sqlite3.connect('C:\\Users\\march\\Documents\\GitHub\\Django-project\\db.sqlite3')
+
+
+
+
+
+    df = df.assign(
+        date=lambda x: [x[:7] for x in df['published_at']]
+        ).assign(
+            id = lambda x: [x for x in range(1,len(df['published_at'])+1)]
+        )
+    df = df.assign(
+            salary_average = lambda x:[
+                get_salary(salary_from, salary_to, get_koef(salary_currency,date, conn))
+                for (salary_from, salary_to, salary_currency, date) in zip(df['salary_from'], df['salary_to'], df['salary_currency'], df['date'])
+            ]
+        )
+    df.to_sql('vacancies', conn, index=False, if_exists='replace',
+              dtype={'name': 'String', 'key_skills': 'Real', 'salary_from': 'Real', 'salary_to': 'Real', 'salary_average': 'Real', 'salary_currency': 'Real', 'area_name': 'Real', 'published_at': 'Real', 'UZS': 'Real', 'GEL': 'Real'})
+
 
     print()
 
