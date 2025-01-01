@@ -1,0 +1,54 @@
+{% load static %}
+{% with request.resolver_match.view_name as view_name %}
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/fav/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/fav/favicon-16x16.png' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <title>
+      {% block title %}
+      {% endblock %}
+    </title>
+  </head>
+  <body>
+    {% include 'includes/header.html' %}
+    <!--{% url 'main:index' %}-->
+    <!--class="nav-link {% if view_name  == 'blog:index' %}active{% endif %}"-->
+    <nav class="navbar navbar-light"  style="background-color: lightskyblue">
+        <ul class="nav  nav-pills">
+          <li class="nav-item">
+            <a class="nav-link {% if view_name  == 'main:index' %}active{% endif %}" href="{% url 'main:index' %}">
+              Общая статистика
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if view_name  == 'main:popularity' %}active{% endif %}" href="{% url 'main:popularity' %}">
+              Востребованность
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if view_name  == 'main:geography' %}active{% endif %}" href="{% url 'main:geography' %}">
+              География
+            </a>
+          </li>
+                    <li class="nav-item">
+            <a class="nav-link {% if view_name  == 'main:skills' %}active{% endif %}" href="{% url 'main:skills' %}">
+              Навыки
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if view_name  == 'main:last' %}active{% endif %}" href="{% url 'main:last' %}">
+              Последние вакансии
+            </a>
+          </li>
+        </ul>
+    </nav>
+    {% block content %}
+    {% endblock %}
+    {% include 'includes/footer.html' %}
+  </body>
+</html>
+{% endwith %}

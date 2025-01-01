@@ -1,9 +1,8 @@
 from django.shortcuts import render
-from .models import *
-import sqlite3
-
+from .models import City
 
 def index(request):
+    data = City.objects.all()
     template = 'main/index.html'
-    context = {}
+    context = {'cities': data}
     return render(request, template, context)
