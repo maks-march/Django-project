@@ -1,3 +1,6 @@
 from django.shortcuts import render
 
-# Create your views here.
+def skills(request):
+    template = 'skills_stat/skills.html'
+    context = {}
+    return render(request, template, context)

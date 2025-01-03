@@ -1,3 +1,6 @@
 from django.shortcuts import render
 
-# Create your views here.
+def geography(request):
+    template = 'cities_stat/geography.html'
+    context = {}
+    return render(request, template, context)

@@ -1,8 +1,8 @@
 from django.urls import path, include
 from . import views
 
-app_name = 'main'
+app_name = 'cities_stat'
 
 urlpatterns = [
-    path('', views.index, name = 'index'),
+    path('', views.geography, name = 'geography'),
 ]

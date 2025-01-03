@@ -5,4 +5,4 @@ def index(request):
     data = City.objects.all()
     template = 'main/index.html'
     context = {'cities': data}
-    return render(request, template, context)
+    return render(request, template)

@@ -33,10 +33,10 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'main.apps.MainConfig',
-    'cities_stat.apps.MainConfig',
-    'years_stat.apps.MainConfig',
-    'skills_stat.apps.MainConfig',
-    'last.apps.MainConfig',
+    'cities_stat.apps.CitiesStatConfig',
+    'years_stat.apps.YearsStatConfig',
+    'skills_stat.apps.SkillsStatConfig',
+    'last.apps.LastConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

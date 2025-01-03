@@ -1,3 +1,6 @@
 from django.shortcuts import render
 
-# Create your views here.
+def popularity(request):
+    template = 'years_stat/popularity.html'
+    context = {}
+    return render(request, template, context)
