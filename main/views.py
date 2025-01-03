@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import City
+from .models import City, Skill, Year
 
 def index(request):
     template = 'main/index.html'
