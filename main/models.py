@@ -24,15 +24,6 @@ class Skill(models.Model):
     class Meta:
         db_table = "skills"
 
-
-class Skill_filtered(models.Model):
-    name = models.CharField("Навык", max_length = 64)
-    count = models.IntegerField("Кол-во упоминаний")
-
-    class Meta:
-        db_table = "skills_filtered"
-
-
 class City(models.Model):
     name = models.CharField("Название", max_length = 64)
     average_salary = models.FloatField("Средняя зарплата")
@@ -40,15 +31,6 @@ class City(models.Model):
 
     class Meta:
         db_table = "cities"
-
-
-class City_filtered(models.Model):
-    name = models.CharField("Название", max_length = 64)
-    average_salary = models.FloatField("Средняя зарплата")
-    proportion = models.FloatField("Доля вакансий")
-
-    class Meta:
-        db_table = "cities_filtered"
 
 
 class Year(models.Model):
@@ -59,11 +41,3 @@ class Year(models.Model):
     class Meta:
         db_table = "years"
 
-
-class Year_filtered(models.Model):
-    year = models.CharField("Год", max_length = 64)
-    average_salary = models.FloatField("Средняя зарплата")
-    count = models.FloatField("Кол-во вакансий")
-
-    class Meta:
-        db_table = "years_filtered"
