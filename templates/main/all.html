@@ -25,16 +25,18 @@
       </h3>
       <canvas id = "chart_table_cities1"></canvas>
       <canvas id = "chart_table_cities2"></canvas>
+      <span class = "type_table_cities hidden">bar</span>
+      <span class = "type_table_cities hidden">pie</span>
       <table id = "table_cities" class = "data">
         <thead>
           <tr>
-            <th class ='city1'>
+            <th>
               Город
             </th>
-            <th class ='salary1'>
+            <th>
               Средняя з/п
             </th>
-            <th class = 'proportion1'>
+            <th>
               Доля вакансий
             </th>
           </tr>
@@ -55,13 +57,13 @@
                 </tr>
               {% endif %}
               <tr class = "{% if forloop.counter > 5 %}hidden table1{% endif %}">
-                <th class ='city1'>
+                <th>
                   {{ city.name }}
                 </th>
-                <th class ='salary1'>
+                <th>
                   {{ city.average_salary }}
                 </th>
-                <th class = 'proportion1'>
+                <th>
                   {{ city.proportion }} %
                 </th>
               </tr>
@@ -79,13 +81,13 @@
       <table id = "table_years" class = "data">
         <thead>
           <tr>
-            <th class = 'year2'>
+            <th>
               Год
             </th>
-            <th class = 'salary2'>
+            <th>
               Средняя з/п
             </th>
-            <th class = 'count2'>
+            <th>
               Кол-во вакансий
             </th>
           </tr>
@@ -106,13 +108,13 @@
               </tr>
             {% endif %}
             <tr class = "{% if forloop.counter > 5 %}hidden table2{% endif %}">
-              <th class = 'year2'>
+              <th>
                 {{ year.year }}
               </th>
-              <th class = 'salary2'>
+              <th>
                 {{ year.average_salary }}
               </th>
-              <th class = 'count2'>
+              <th>
                 {{ year.count }}
               </th>
             </tr>
@@ -129,10 +131,10 @@
       <table id = "table_skills" class = "data">
         <thead>
           <tr>
-            <th class = 'skill3'>
+            <th>
               Навык
             </th>
-            <th class = 'count3'>
+            <th>
               Кол-во упоминаний
             </th>
           </tr>
@@ -151,10 +153,10 @@
               </tr>
             {% endif %}
             <tr class = "{% if forloop.counter > 5 %}hidden table3{% endif %}">
-              <th class = 'skill3'>
+              <th>
                 {{ skill.name }}
               </th>
-              <th class = 'count3'>
+              <th>
                 {{ skill.count }}
               </th>
             </tr>

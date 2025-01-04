@@ -30,7 +30,11 @@ function processHiddenData() {
     const chartDataBlocks = document.querySelectorAll('.data');
 
     chartDataBlocks.forEach((block) => {
-        const type = 'bar';
+        const type_class = `.type_${block.id}`;
+        let type = Array.from(document.querySelectorAll(type_class)).map(el => el.textContent.trim());
+        if (type.length == 0) {
+            type = ['bar', 'bar'];
+        }
         let names = block.querySelectorAll('thead th');
         let num_of_columns = names.length;
 
@@ -50,8 +54,8 @@ function processHiddenData() {
             const value1 = values.filter((_, index) => index % 3 !== 2).filter((_, index) => index % 2 !== 0 && _ != '').map(el => parseFloat(el));
             const value2 = values.filter((_, index) => index % 3 !== 0).filter((_, index) => index % 2 !== 0 && _ != '').map(el => parseFloat(el));
 
-            writeChart(ctx1, headers, value1, undefined, names[1].innerText, type);
-            writeChart(ctx2, headers, value2, undefined, names[2].innerText, type);
+            writeChart(ctx1, headers, value1, undefined, names[1].innerText, type[0]);
+            writeChart(ctx2, headers, value2, undefined, names[2].innerText, type[1]);
         } else {
 
             let canvasId = `chart_${block.id}`;
@@ -60,7 +64,7 @@ function processHiddenData() {
 
             const headers = values.filter((_, index) => index % 2 == 0 && _ != 'Показать еще');
             const value1 = values.filter((_, index) => index % 2 == 1 && _ != '').map(el => parseFloat(el));
-            writeChart(ctx, headers, value1, undefined, names[1].innerText, type);
+            writeChart(ctx, headers, value1, undefined, names[1].innerText, type[0]);
         }
     });
 }

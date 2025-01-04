@@ -2,6 +2,46 @@
 {% load static %}
 {% block content %}
   <main>
-    skills
+    <div class="container p-5">
+      <h3 id = 'title_table_skills'>
+        Статистика по навыкам C++ вакансий
+      </h3>
+      <canvas id = "chart_table_skills"></canvas>
+      <table id = "table_skills" class = "data">
+        <thead>
+          <tr>
+            <th>
+              Навык
+            </th>
+            <th>
+              Кол-во упоминаний
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for skill in skills %}
+            {% if forloop.counter == 6 %}
+              <tr id = 'btn_table3'>
+                <th>
+                  <button class = "table_btn" id = "table3">
+                    Показать еще
+                  </button>
+                </th>
+                <th>
+                </th>
+              </tr>
+            {% endif %}
+            <tr class = "{% if forloop.counter > 5 %}hidden table3{% endif %}">
+              <th>
+                {{ skill.name }}
+              </th>
+              <th>
+                {{ skill.count }}
+              </th>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
   </main>
 {% endblock %}
