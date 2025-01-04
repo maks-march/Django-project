@@ -1,0 +1,14 @@
+th {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+button {
+    cursor: pointer;
+    border-radius: 25px;
+    border: 1px solid black;
+}
+
+.hidden {
+    display: None;
+}
