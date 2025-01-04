@@ -1,6 +1,60 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block navigation %}
+
+
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/img/fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/img/fav/favicon-16x16.png">
+    <link rel="stylesheet" href="/static/css/general.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <title>
+      
+      
+    </title>
+  </head>
+  <body>
+    
+
+<header>
+  <a class="navbar-brand" href="/" style = "font-size: 2.5rem">
+    <img src="/static/img/logo.png" class="d-inline-block align-top" style = "max-height: 4rem" alt="">
+    C++ вакансии
+  </a>
+</header>
+
+    <div class="row container-fluid">
+      <div class="col-4 col-md-3 col-xl-2" style = "padding: 0">
+        <nav class="navbar navbar-light"  style="display: block; height: 100%; background-color: lightskyblue">
+          <ul class="nav nav-pills" style = "flex-direction: column; ">
+          <li class="nav-item">
+            <a class="nav-link active" href="/all/">
+              Общая статистика
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="/popularity/">
+              Востребованность
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="/geography/">
+              География
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="/skills/">
+              Навыки
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="/last/">
+              Последние вакансии
+            </a>
+          </li>
+          
   <li class="nav-item">
     <a class="nav-link" href="#title_table_cities">
       Статистика по городам
@@ -16,8 +70,12 @@
       Статистика по навыкам
     </a>
   </li>
-{% endblock %}
-{% block content %}
+
+        </ul>
+        </nav>
+      </div>
+      <div class="col-8 col-md-9 col-xl-10">
+        
   <main>
     <div class="container p-5">
       <h3 id = 'title_table_cities'>
@@ -42,8 +100,73 @@
           </tr>
         </thead>
         <tbody>
-            {% for city in cities %}
-              {% if forloop.counter == 6 %}
+            
+              
+              <tr class = "">
+                <th>
+                  Москва
+                </th>
+                <th>
+                  71929.7
+                </th>
+                <th>
+                  34.7324 %
+                </th>
+              </tr>
+            
+              
+              <tr class = "">
+                <th>
+                  Санкт-Петербург
+                </th>
+                <th>
+                  69004.39
+                </th>
+                <th>
+                  9.2075 %
+                </th>
+              </tr>
+            
+              
+              <tr class = "">
+                <th>
+                  Минск
+                </th>
+                <th>
+                  65861.3
+                </th>
+                <th>
+                  3.1644 %
+                </th>
+              </tr>
+            
+              
+              <tr class = "">
+                <th>
+                  Новосибирск
+                </th>
+                <th>
+                  71787.24
+                </th>
+                <th>
+                  2.9194 %
+                </th>
+              </tr>
+            
+              
+              <tr class = "">
+                <th>
+                  Екатеринбург
+                </th>
+                <th>
+                  93330.69
+                </th>
+                <th>
+                  2.2635 %
+                </th>
+              </tr>
+            
+              
                 <tr id = 'btn_table1'>
                   <th>
                     <button class = "table_btn" id = "table1">
@@ -55,19 +178,201 @@
                   <th>
                   </th>
                 </tr>
-              {% endif %}
-              <tr class = "{% if forloop.counter > 5 %}hidden table1{% endif %}">
+              
+              <tr class = "hidden table1">
                 <th>
-                  {{ city.name }}
+                  Краснодар
                 </th>
                 <th>
-                  {{ city.average_salary }}
+                  79046.51
                 </th>
                 <th>
-                  {{ city.proportion }} %
+                  1.9851 %
                 </th>
               </tr>
-            {% endfor %}
+            
+              
+              <tr class = "hidden table1">
+                <th>
+                  Ярославль
+                </th>
+                <th>
+                  76402.94
+                </th>
+                <th>
+                  1.8785 %
+                </th>
+              </tr>
+            
+              
+              <tr class = "hidden table1">
+                <th>
+                  Ростов-на-Дону
+                </th>
+                <th>
+                  77015.58
+                </th>
+                <th>
+                  1.8054 %
+                </th>
+              </tr>
+            
+              
+              <tr class = "hidden table1">
+                <th>
+                  Киев
+                </th>
+                <th>
+                  53785.69
+                </th>
+                <th>
+                  1.7041 %
+                </th>
+              </tr>
+            
+              
+              <tr class = "hidden table1">
+                <th>
+                  Нижний Новгород
+                </th>
+                <th>
+                  58489.68
+                </th>
+                <th>
+                  1.6671 %
+                </th>
+              </tr>
+            
+              
+              <tr class = "hidden table1">
+                <th>
+                  Ульяновск
+                </th>
+                <th>
+                  84474.82
+                </th>
+                <th>
+                  1.5485 %
+                </th>
+              </tr>
+            
+              
+              <tr class = "hidden table1">
+                <th>
+                  Алматы
+                </th>
+                <th>
+                  82994.58
+                </th>
+                <th>
+                  1.48 %
+                </th>
+              </tr>
+            
+              
+              <tr class = "hidden table1">
+                <th>
+                  Тольятти
+                </th>
+                <th>
+                  95321.3
+                </th>
+                <th>
+                  1.4277 %
+                </th>
+              </tr>
+            
+              
+              <tr class = "hidden table1">
+                <th>
+                  Балашиха
+                </th>
+                <th>
+                  91550.89
+                </th>
+                <th>
+                  1.4135 %
+                </th>
+              </tr>
+            
+              
+              <tr class = "hidden table1">
+                <th>
+                  Томск
+                </th>
+                <th>
+                  80622.89
+                </th>
+                <th>
+                  1.3772 %
+                </th>
+              </tr>
+            
+              
+              <tr class = "hidden table1">
+                <th>
+                  Барнаул
+                </th>
+                <th>
+                  92243.68
+                </th>
+                <th>
+                  1.1864 %
+                </th>
+              </tr>
+            
+              
+              <tr class = "hidden table1">
+                <th>
+                  Харьков
+                </th>
+                <th>
+                  47710.76
+                </th>
+                <th>
+                  1.1849 %
+                </th>
+              </tr>
+            
+              
+              <tr class = "hidden table1">
+                <th>
+                  Нур-Султан
+                </th>
+                <th>
+                  63768.7
+                </th>
+                <th>
+                  1.1355 %
+                </th>
+              </tr>
+            
+              
+              <tr class = "hidden table1">
+                <th>
+                  Уфа
+                </th>
+                <th>
+                  60317.08
+                </th>
+                <th>
+                  1.1131 %
+                </th>
+              </tr>
+            
+              
+              <tr class = "hidden table1">
+                <th>
+                  Тамбов
+                </th>
+                <th>
+                  82516.76
+                </th>
+                <th>
+                  1.092 %
+                </th>
+              </tr>
+            
         </tbody>
       </table>
     </div>
@@ -93,8 +398,73 @@
           </tr>
         </thead>
         <tbody>
-          {% for year in years %}
-            {% if forloop.counter == 6 %}
+          
+            
+            <tr class = "">
+              <th>
+                2024
+              </th>
+              <th>
+                108730.02
+              </th>
+              <th>
+                229405.0
+              </th>
+            </tr>
+          
+            
+            <tr class = "">
+              <th>
+                2023
+              </th>
+              <th>
+                97460.92
+              </th>
+              <th>
+                324487.0
+              </th>
+            </tr>
+          
+            
+            <tr class = "">
+              <th>
+                2022
+              </th>
+              <th>
+                89922.89
+              </th>
+              <th>
+                476347.0
+              </th>
+            </tr>
+          
+            
+            <tr class = "">
+              <th>
+                2021
+              </th>
+              <th>
+                81578.79
+              </th>
+              <th>
+                453530.0
+              </th>
+            </tr>
+          
+            
+            <tr class = "">
+              <th>
+                2020
+              </th>
+              <th>
+                71253.13
+              </th>
+              <th>
+                296600.0
+              </th>
+            </tr>
+          
+            
               <tr id = 'btn_table2'>
                 <th>
                   <button class = "table_btn" id = "table2">
@@ -106,19 +476,227 @@
                 <th>
                 </th>
               </tr>
-            {% endif %}
-            <tr class = "{% if forloop.counter > 5 %}hidden table2{% endif %}">
+            
+            <tr class = "hidden table2">
               <th>
-                {{ year.year }}
+                2019
               </th>
               <th>
-                {{ year.average_salary }}
+                68078.32
               </th>
               <th>
-                {{ year.count }}
+                266916.0
               </th>
             </tr>
-          {% endfor %}
+          
+            
+            <tr class = "hidden table2">
+              <th>
+                2018
+              </th>
+              <th>
+                63849.72
+              </th>
+              <th>
+                283685.0
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table2">
+              <th>
+                2017
+              </th>
+              <th>
+                58683.85
+              </th>
+              <th>
+                203791.0
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table2">
+              <th>
+                2016
+              </th>
+              <th>
+                54877.42
+              </th>
+              <th>
+                177422.0
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table2">
+              <th>
+                2015
+              </th>
+              <th>
+                51447.82
+              </th>
+              <th>
+                147697.0
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table2">
+              <th>
+                2014
+              </th>
+              <th>
+                48552.18
+              </th>
+              <th>
+                141479.0
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table2">
+              <th>
+                2013
+              </th>
+              <th>
+                49086.26
+              </th>
+              <th>
+                129470.0
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table2">
+              <th>
+                2012
+              </th>
+              <th>
+                47462.02
+              </th>
+              <th>
+                95146.0
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table2">
+              <th>
+                2011
+              </th>
+              <th>
+                46448.52
+              </th>
+              <th>
+                77413.0
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table2">
+              <th>
+                2010
+              </th>
+              <th>
+                44657.9
+              </th>
+              <th>
+                51686.0
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table2">
+              <th>
+                2009
+              </th>
+              <th>
+                44811.75
+              </th>
+              <th>
+                31081.0
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table2">
+              <th>
+                2008
+              </th>
+              <th>
+                48411.22
+              </th>
+              <th>
+                46657.0
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table2">
+              <th>
+                2007
+              </th>
+              <th>
+                44449.49
+              </th>
+              <th>
+                35341.0
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table2">
+              <th>
+                2006
+              </th>
+              <th>
+                41317.92
+              </th>
+              <th>
+                23057.0
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table2">
+              <th>
+                2005
+              </th>
+              <th>
+                44939.21
+              </th>
+              <th>
+                9362.0
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table2">
+              <th>
+                2004
+              </th>
+              <th>
+                42967.52
+              </th>
+              <th>
+                4322.0
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table2">
+              <th>
+                2003
+              </th>
+              <th>
+                41304.95
+              </th>
+              <th>
+                1070.0
+              </th>
+            </tr>
+          
         </tbody>
       </table>
     </div>
@@ -140,8 +718,58 @@
           </tr>
         </thead>
         <tbody>
-          {% for skill in skills %}
-            {% if forloop.counter == 6 %}
+          
+            
+            <tr class = "">
+              <th>
+                работа в команде
+              </th>
+              <th>
+                227672
+              </th>
+            </tr>
+          
+            
+            <tr class = "">
+              <th>
+                пользователь пк
+              </th>
+              <th>
+                193156
+              </th>
+            </tr>
+          
+            
+            <tr class = "">
+              <th>
+                грамотная речь
+              </th>
+              <th>
+                182221
+              </th>
+            </tr>
+          
+            
+            <tr class = "">
+              <th>
+                javascript
+              </th>
+              <th>
+                149666
+              </th>
+            </tr>
+          
+            
+            <tr class = "">
+              <th>
+                git
+              </th>
+              <th>
+                148666
+              </th>
+            </tr>
+          
+            
               <tr id = 'btn_table3'>
                 <th>
                   <button class = "table_btn" id = "table3">
@@ -151,18 +779,168 @@
                 <th>
                 </th>
               </tr>
-            {% endif %}
-            <tr class = "{% if forloop.counter > 5 %}hidden table3{% endif %}">
+            
+            <tr class = "hidden table3">
               <th>
-                {{ skill.name }}
+                sql
               </th>
               <th>
-                {{ skill.count }}
+                123503
               </th>
             </tr>
-          {% endfor %}
+          
+            
+            <tr class = "hidden table3">
+              <th>
+                html
+              </th>
+              <th>
+                111642
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table3">
+              <th>
+                php
+              </th>
+              <th>
+                106922
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table3">
+              <th>
+                linux
+              </th>
+              <th>
+                102351
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table3">
+              <th>
+                английский язык
+              </th>
+              <th>
+                99937
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table3">
+              <th>
+                ведение переговоров
+              </th>
+              <th>
+                97286
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table3">
+              <th>
+                css
+              </th>
+              <th>
+                95272
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table3">
+              <th>
+                деловое общение
+              </th>
+              <th>
+                95138
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table3">
+              <th>
+                mysql
+              </th>
+              <th>
+                94869
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table3">
+              <th>
+                adobe photoshop
+              </th>
+              <th>
+                92975
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table3">
+              <th>
+                управление проектами
+              </th>
+              <th>
+                88394
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table3">
+              <th>
+                деловая переписка
+              </th>
+              <th>
+                82117
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table3">
+              <th>
+                активные продажи
+              </th>
+              <th>
+                79795
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table3">
+              <th>
+                1с программирование
+              </th>
+              <th>
+                75752
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table3">
+              <th>
+                настройка пк
+              </th>
+              <th>
+                73582
+              </th>
+            </tr>
+          
         </tbody>
       </table>
     </div>
   </main>
-{% endblock %}
+
+      </div>
+    </div>
+    <footer class="border-top text-center py-3">
+  <span>Автор: Марченко Максим Константинович. РИ-230947</span>
+</footer>
+    <script src = "/static/js/tables_show.js"></script>
+    <script src = "/static/js/write_charts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </body>
+</html>
