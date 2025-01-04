@@ -2,6 +2,9 @@
 {% load static %}
 {% block content %}
   <main>
-    last
+    {{ response }}
+    {% for vacancy in vacancies %}
+      {{ vacancy }}
+    {% endfor %}
   </main>
 {% endblock %}
