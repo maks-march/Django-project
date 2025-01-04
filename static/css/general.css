@@ -9,6 +9,15 @@ button {
     border: 1px solid black;
 }
 
+.data {
+    margin-top: 2vh;
+}
+
+canvas {
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
 .hidden {
     display: None;
 }

@@ -17,8 +17,6 @@
   </head>
   <body>
     {% include 'includes/header.html' %}
-    <!--{% url 'main:index' %}-->
-    <!--class="nav-link {% if view_name  == 'blog:index' %}active{% endif %}"-->
     <div class="row container-fluid">
       <div class="col-4 col-md-3 col-xl-2" style = "padding: 0">
         <nav class="navbar navbar-light"  style="display: block; height: 100%; background-color: lightskyblue">
@@ -60,6 +58,8 @@
     </div>
     {% include 'includes/footer.html' %}
     <script src = "{% static 'js/tables_show.js' %}"></script>
+    <script src = "{% static 'js/write_charts.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </body>
 </html>
 {% endwith %}

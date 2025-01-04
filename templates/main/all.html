@@ -2,25 +2,30 @@
 {% load static %}
 {% block navigation %}
   <li class="nav-item">
-    <a class="nav-link" href="#table_cities">
-      Таблица данных по городам
+    <a class="nav-link" href="#title_table_cities">
+      Статистика по городам
     </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#table_years">
-      Таблица данных по годам
+    <a class="nav-link" href="#title_table_years">
+      Статистика по годам
     </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#table_skills">
-      Таблица данных по навыкам
+    <a class="nav-link" href="#title_table_skills">
+      Статистика по навыкам
     </a>
   </li>
 {% endblock %}
 {% block content %}
   <main>
     <div class="container p-5">
-      <table id = "table_cities">
+      <h3 id = 'title_table_cities'>
+        Статистика по городам
+      </h3>
+      <canvas id = "chart_table_cities1"></canvas>
+      <canvas id = "chart_table_cities2"></canvas>
+      <table id = "table_cities" class = "data">
         <thead>
           <tr>
             <th class ='city1'>
@@ -66,7 +71,12 @@
     </div>
 
     <div class="container p-5">
-      <table id = "table_years">
+      <h3 id = 'title_table_years'>
+        Статистика по годам
+      </h3>
+      <canvas id = "chart_table_years1"></canvas>
+      <canvas id = "chart_table_years2"></canvas>
+      <table id = "table_years" class = "data">
         <thead>
           <tr>
             <th class = 'year2'>
@@ -110,8 +120,13 @@
         </tbody>
       </table>
     </div>
+
     <div class="container p-5">
-      <table id = "table_skills">
+      <h3 id = 'title_table_skills'>
+        Статистика по навыкам
+      </h3>
+      <canvas id = "chart_table_skills"></canvas>
+      <table id = "table_skills" class = "data">
         <thead>
           <tr>
             <th class = 'skill3'>
