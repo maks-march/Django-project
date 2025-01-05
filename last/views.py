@@ -2,11 +2,6 @@ from django.shortcuts import render
 import requests, locale
 from datetime import datetime, timedelta
 
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
-
 def last(request):
     template = 'last/last.html'
     locale.setlocale(
