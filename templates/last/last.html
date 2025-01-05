@@ -1,10 +1,33 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block title %}
+  Новые вакансии
+{% endblock %}
 {% block content %}
   <main>
-    {{ response }}
+    {{ url }}
     {% for vacancy in vacancies %}
-      {{ vacancy }}
+      <div class="container p-5">
+        <h4>
+          {{ vacancy.name }}
+        </h4>
+          {{ vacancy.description|safe }}
+        <p>
+          <strong>Ключевые навыки: </strong>{{ vacancy.skills }}
+        </p>
+        <p>
+          <strong>Работодатель: </strong>{{ vacancy.employer }}
+        </p>
+        <p>
+          <strong>Оклад: </strong>{{ vacancy.salary }}
+        </p>
+        <p>
+          <strong>Местоположение: </strong>{{ vacancy.area_name }}
+        </p>
+        <p>
+          <strong>Опубликованно: </strong>{{ vacancy.published_at }}
+        </p>
+      </div>
     {% endfor %}
   </main>
 {% endblock %}
