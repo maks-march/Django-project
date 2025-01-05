@@ -1,0 +1,174 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+  Вся статистика
+{% endblock %}
+{% block navigation %}
+  <li class="nav-item">
+    <a class="nav-link" href="#title_table_cities">
+      Статистика по городам
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#title_table_years">
+      Статистика по годам
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#title_table_skills">
+      Статистика по навыкам
+    </a>
+  </li>
+{% endblock %}
+{% block content %}
+  <main>
+    <div class="container p-5">
+      <h3 id = 'title_table_cities'>
+        Средняя зарплата по городам
+      </h3>
+      <canvas id = "chart_table_cities1"></canvas>
+      <h3 id = 'title_table_cities'>
+
+      </h3>
+      <canvas id = "chart_table_cities2"></canvas>
+      <span class = "type_table_cities hidden">bar</span>
+      <span class = "type_table_cities hidden">pie</span>
+      <table id = "table_cities" class = "data">
+        <thead>
+          <tr>
+            <th>
+              Город
+            </th>
+            <th>
+              Средняя з/п
+            </th>
+            <th>
+              Доля вакансий
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for city in cities %}
+              {% if forloop.counter == 6 %}
+                <tr id = 'btn_table1'>
+                  <th>
+                    <button class = "table_btn" id = "table1">
+                      Показать еще
+                    </button>
+                  </th>
+                  <th>
+                  </th>
+                  <th>
+                  </th>
+                </tr>
+              {% endif %}
+              <tr class = "{% if forloop.counter > 5 %}hidden table1{% endif %}">
+                <th>
+                  {{ city.name }}
+                </th>
+                <th>
+                  {{ city.average_salary }}
+                </th>
+                <th>
+                  {{ city.proportion }} %
+                </th>
+              </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="container p-5">
+      <h3 id = 'title_table_years'>
+        Статистика по годам
+      </h3>
+      <canvas id = "chart_table_years1"></canvas>
+      <canvas id = "chart_table_years2"></canvas>
+      <table id = "table_years" class = "data">
+        <thead>
+          <tr>
+            <th>
+              Год
+            </th>
+            <th>
+              Средняя з/п
+            </th>
+            <th>
+              Кол-во вакансий
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for year in years %}
+            {% if forloop.counter == 6 %}
+              <tr id = 'btn_table2'>
+                <th>
+                  <button class = "table_btn" id = "table2">
+                    Показать еще
+                  </button>
+                </th>
+                <th>
+                </th>
+                <th>
+                </th>
+              </tr>
+            {% endif %}
+            <tr class = "{% if forloop.counter > 5 %}hidden table2{% endif %}">
+              <th>
+                {{ year.year }}
+              </th>
+              <th>
+                {{ year.average_salary }}
+              </th>
+              <th>
+                {{ year.count }}
+              </th>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="container p-5">
+      <h3 id = 'title_table_skills'>
+        Статистика по навыкам
+      </h3>
+      <canvas id = "chart_table_skills"></canvas>
+      <table id = "table_skills" class = "data">
+        <thead>
+          <tr>
+            <th>
+              Навык
+            </th>
+            <th>
+              Кол-во упоминаний
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for skill in skills %}
+            {% if forloop.counter == 6 %}
+              <tr id = 'btn_table3'>
+                <th>
+                  <button class = "table_btn" id = "table3">
+                    Показать еще
+                  </button>
+                </th>
+                <th>
+                </th>
+              </tr>
+            {% endif %}
+            <tr class = "{% if forloop.counter > 5 %}hidden table3{% endif %}">
+              <th>
+                {{ skill.name }}
+              </th>
+              <th>
+                {{ skill.count }}
+              </th>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </main>
+{% endblock %}
