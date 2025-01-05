@@ -1,15 +1,18 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}
-  Года
+  Востребованность
 {% endblock %}
 {% block content %}
   <main>
     <div class="container p-5">
-      <h3 id = 'title_table_years'>
-        Статистика по годам C++ вакансий
+      <h3>
+        Изменение средней зарплаты за последние 20 лет
       </h3>
       <canvas id = "chart_table_years1"></canvas>
+      <h3>
+        Изменение количества вакансий за последние 20 лет
+      </h3>
       <canvas id = "chart_table_years2"></canvas>
       <table id = "table_years" class = "data">
         <thead>

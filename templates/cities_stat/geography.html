@@ -1,15 +1,18 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}
-  Города
+  География
 {% endblock %}
 {% block content %}
   <main>
     <div class="container p-5">
-      <h3 id = 'title_table_cities'>
-        Статистика по городам C++ вакансий
+      <h3>
+        Средняя зарплата по городам
       </h3>
       <canvas id = "chart_table_cities1"></canvas>
+      <h3>
+        Доля вакансий в городах
+      </h3>
       <canvas id = "chart_table_cities2"></canvas>
       <span class = "type_table_cities hidden">bar</span>
       <span class = "type_table_cities hidden">pie</span>
