@@ -13,9 +13,9 @@ def last(request):
     BASE_DIR = 'https://api.hh.ru/vacancies'
     date_from = (datetime.now() - timedelta(days=1)).isoformat()
     profession = '(NAME:разработчик OR NAME:программист OR NAME:инженер) AND NAME:C++ AND NOT 1C'
-    url1 = f'{BASE_DIR}?date_from={date_from}&text={profession}&per_page=10';
+    url = f'{BASE_DIR}?date_from={date_from}&text={profession}&per_page=10';
 
-    response = requests.get(url1)
+    response = requests.get(url)
     data = response.json()
     vacancies = data.get('items', [])
     data = []
@@ -41,5 +41,5 @@ def last(request):
         new_vac['area_name'] = vacancy['area']['name']
         new_vac['published_at'] = datetime.strptime(vacancy['published_at'][:-5], "%Y-%m-%dT%H:%M:%S").strftime("%A, %d %B %Y, %H:%M:%S")
         data.append(new_vac)
-    context = {'vacancies': data, 'url': url1}
+    context = {'vacancies': data}
     return render(request, template, context)
