@@ -1,9 +1,0 @@
-{% load static %}
-{% with request.resolver_match.view_name as view_name %}
-<header>
-  <a class="navbar-brand" href="{% url 'main:index' %}" style = "font-size: 2.5rem">
-    <img src="{% static 'img/logo.png' %}" class="d-inline-block align-top" style = "max-height: 4rem" alt="">
-    C++ вакансии
-  </a>
-</header>
-{% endwith %}
