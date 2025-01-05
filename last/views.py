@@ -3,7 +3,6 @@ import requests, locale
 from datetime import datetime, timedelta
 
 
-
 def last(request):
     template = 'last/last.html'
     locale.setlocale(
