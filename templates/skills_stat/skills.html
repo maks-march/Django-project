@@ -1,9 +1,67 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block title %}
+
+
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/img/fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/img/fav/favicon-16x16.png">
+    <link rel="stylesheet" href="/static/css/general.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <title>
+      
   Топ навыков
-{% endblock %}
-{% block content %}
+
+    </title>
+  </head>
+  <body>
+    
+
+<header>
+  <a class="navbar-brand" href="/" style = "font-size: 2.5rem">
+    <img src="/static/img/logo.png" class="d-inline-block align-top" style = "max-height: 4rem" alt="">
+    C++ вакансии
+  </a>
+</header>
+
+    <div class="row container-fluid">
+      <div class="col-4 col-md-3 col-xl-2" style = "padding: 0">
+        <nav class="navbar navbar-light"  style="display: block; height: 100%; background-color: lightskyblue">
+          <ul class="nav nav-pills" style = "flex-direction: column; ">
+          <li class="nav-item">
+            <a class="nav-link " href="/all/">
+              Общая статистика
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="/popularity/">
+              Востребованность
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="/geography/">
+              География
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/skills/">
+              Навыки
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="/last/">
+              Последние вакансии с HH.ru
+            </a>
+          </li>
+          
+          
+        </ul>
+        </nav>
+      </div>
+      <div class="col-8 col-md-9 col-xl-10">
+        
   <main>
     <div class="container p-5">
       <h3>
@@ -22,8 +80,58 @@
           </tr>
         </thead>
         <tbody>
-          {% for skill in skills %}
-            {% if forloop.counter == 6 %}
+          
+            
+            <tr class = "">
+              <th>
+                c++
+              </th>
+              <th>
+                5449
+              </th>
+            </tr>
+          
+            
+            <tr class = "">
+              <th>
+                linux
+              </th>
+              <th>
+                2863
+              </th>
+            </tr>
+          
+            
+            <tr class = "">
+              <th>
+                c/c++
+              </th>
+              <th>
+                2426
+              </th>
+            </tr>
+          
+            
+            <tr class = "">
+              <th>
+                git
+              </th>
+              <th>
+                2151
+              </th>
+            </tr>
+          
+            
+            <tr class = "">
+              <th>
+                qt
+              </th>
+              <th>
+                1760
+              </th>
+            </tr>
+          
+            
               <tr id = 'btn_table3'>
                 <th>
                   <button class = "table_btn" id = "table3">
@@ -33,18 +141,268 @@
                 <th>
                 </th>
               </tr>
-            {% endif %}
-            <tr class = "{% if forloop.counter > 5 %}hidden table3{% endif %}">
+            
+            <tr class = "hidden table3">
               <th>
-                {{ skill.name }}
+                ооп
               </th>
               <th>
-                {{ skill.count }}
+                1570
               </th>
             </tr>
-          {% endfor %}
+          
+            
+            <tr class = "hidden table3">
+              <th>
+                python
+              </th>
+              <th>
+                1033
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table3">
+              <th>
+                stl
+              </th>
+              <th>
+                896
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table3">
+              <th>
+                sql
+              </th>
+              <th>
+                836
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table3">
+              <th>
+                английский язык
+              </th>
+              <th>
+                771
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table3">
+              <th>
+                c#
+              </th>
+              <th>
+                724
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table3">
+              <th>
+                java
+              </th>
+              <th>
+                455
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table3">
+              <th>
+                postgresql
+              </th>
+              <th>
+                454
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table3">
+              <th>
+                boost
+              </th>
+              <th>
+                435
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table3">
+              <th>
+                ms visual studio
+              </th>
+              <th>
+                431
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table3">
+              <th>
+                tcp/ip
+              </th>
+              <th>
+                406
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table3">
+              <th>
+                разработка по
+              </th>
+              <th>
+                311
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table3">
+              <th>
+                javascript
+              </th>
+              <th>
+                283
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table3">
+              <th>
+                opengl
+              </th>
+              <th>
+                280
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table3">
+              <th>
+                mysql
+              </th>
+              <th>
+                271
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table3">
+              <th>
+                android
+              </th>
+              <th>
+                249
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table3">
+              <th>
+                cmake
+              </th>
+              <th>
+                232
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table3">
+              <th>
+                qml
+              </th>
+              <th>
+                223
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table3">
+              <th>
+                svn
+              </th>
+              <th>
+                205
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table3">
+              <th>
+                bash
+              </th>
+              <th>
+                203
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table3">
+              <th>
+                arm
+              </th>
+              <th>
+                201
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table3">
+              <th>
+                .net framework
+              </th>
+              <th>
+                193
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table3">
+              <th>
+                opencv
+              </th>
+              <th>
+                167
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table3">
+              <th>
+                unity
+              </th>
+              <th>
+                159
+              </th>
+            </tr>
+          
+            
+            <tr class = "hidden table3">
+              <th>
+                ms sql
+              </th>
+              <th>
+                156
+              </th>
+            </tr>
+          
         </tbody>
       </table>
     </div>
   </main>
-{% endblock %}
+
+      </div>
+    </div>
+    <footer class="border-top text-center py-3">
+  <span>Автор: Марченко Максим Константинович. РИ-230947</span>
+</footer>
+    <script src = "/static/js/tables_show.js"></script>
+    <script src = "/static/js/write_charts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </body>
+</html>
