@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+  География
+{% endblock %}
+{% block content %}
+  <main>
+    <div class="container p-5">
+      <h3>
+        Средняя зарплата по городам
+      </h3>
+      <canvas id = "chart_table_cities1"></canvas>
+      <h3>
+        Доля вакансий в городах
+      </h3>
+      <canvas id = "chart_table_cities2"></canvas>
+      <span class = "type_table_cities hidden">bar</span>
+      <span class = "type_table_cities hidden">pie</span>
+      <table id = "table_cities" class = "data">
+        <thead>
+          <tr>
+            <th class ='city1'>
+              Город
+            </th>
+            <th class ='salary1'>
+              Средняя з/п в рублях
+            </th>
+            <th class = 'proportion1'>
+              Доля вакансий
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for city in cities %}
+              {% if forloop.counter == 6 %}
+                <tr id = 'btn_table1'>
+                  <th>
+                    <button class = "table_btn" id = "table1">
+                      Показать еще
+                    </button>
+                  </th>
+                  <th>
+                  </th>
+                  <th>
+                  </th>
+                </tr>
+              {% endif %}
+              <tr class = "{% if forloop.counter > 5 %}hidden table1{% endif %}">
+                <th class ='city1'>
+                  {{ city.name }}
+                </th>
+                <th class ='salary1'>
+                  {{ city.average_salary }}
+                </th>
+                <th class = 'proportion1'>
+                  {{ city.proportion }} %
+                </th>
+              </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </main>
+{% endblock %}

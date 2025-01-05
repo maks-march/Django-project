@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+  Последние вакансии с HH.ru
+{% endblock %}
+{% block content %}
+  <main>
+    {% for vacancy in vacancies %}
+      <div class="container p-5">
+        <h4>
+          {{ vacancy.name }}
+        </h4>
+          {{ vacancy.description|safe }}
+        <p>
+          <strong>Ключевые навыки: </strong>{{ vacancy.skills }}
+        </p>
+        <p>
+          <strong>Работодатель: </strong>{{ vacancy.employer }}
+        </p>
+        <p>
+          <strong>Оклад: </strong>{{ vacancy.salary }}
+        </p>
+        <p>
+          <strong>Местоположение: </strong>{{ vacancy.area_name }}
+        </p>
+        <p>
+          <strong>Опубликованно: </strong>{{ vacancy.published_at }}
+        </p>
+      </div>
+    {% endfor %}
+  </main>
+{% endblock %}
