@@ -1,4 +1,3 @@
-// Хранилище существующих графиков
 const activeCharts = {};
 
 function writeChart(ctx, list, _data, color, about ,type) {
